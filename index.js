@@ -23,6 +23,12 @@ function viewCart() {
     return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`
   } else if (cart.length === 2) {
     return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}, and ${cart[1].itemName} at $${cart[1].itemPrice}.`
+  } else {
+    var myString = "In your cart, you have "
+    for(var i = 0; i < cart.length - 1; i++){
+      myString = myString + `${cart[1].itemName} at $${cart[1].itemPrice}.`
+    }
+    return myString + `and ${cart[cart.length - 1].itemName} at $${cart[cart.length - 1].itemPrice}.`
   }
 }
 
